@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+
+/* === CSS Variables === */
+:root {
+  --head-family: 'Funnel Display', sans-serif;
+  --body-family: 'Poppins', sans-serif;
+  --body-color: #050B18;
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --primary: #00C9FF;
+  --secondary: #0087B2;
+  --glow: #00F0FF;
+  --lightText: #F1F5F9;
+  --borderDark: #1E293B;
+}
+
+@theme inline {
+  --color-text-white: var(--text-white);
+  --color-text-black: var(--text-black);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-glow: var(--glow);
+  --color-lightText: var(--lightText);
+  --color-borderDark: var(--borderDark);
+  --color-head-family: var(--head-family);
+  --color-body-family: var(--body-family);
+  --color-body-color: var(--body-color);
+}
+
+
+
+/* === Base Global Styles === */
+body {
+  width: 100%;
+  font-family: var(--body-family);
+  background-color: var(--body-color);
+  font-size: 15px;
+  color: var(--text-white);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Section === */
+section {
+  padding: 5rem 0rem;
+}
+
+/* === Typography === */
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--head-family);
+  color: var(--text-white);
+}
+
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+input::placeholder {
+  color: var(--text-white);
+}
+
+img {
+  width: 100%;
+}
+
+/* === Buttons === */
+button {
+  border: none;
+  border-radius: 8px;
+  color: var(--text-white);
+  background-color: var(--primary);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: var(--head-family);
+  cursor: pointer;
+}
+
+/* === Loader === */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  padding: 20px;
+  background: none;
+  box-sizing: border-box;
+}
+
+.spinner img {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+.spinner .ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  border: 10px solid var(--glow); /* active glow */
+  border-top: 5px solid var(--glow); /* smooth spin */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.top-bar, .bottom-bar {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--glow),
+    #FFD700 /* Gold accent */,
+    var(--glow),
+    var(--primary)
+  );
+}
+
