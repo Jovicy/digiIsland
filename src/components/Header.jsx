@@ -26,11 +26,12 @@ const Header = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
 
       {/* Content */}
-      <div className="container relative z-20 flex flex-col gap-6 justify-center min-h-[90vh] px-4 md:px-8">
+      <div className="container relative z-20 flex flex-col gap-6 justify-center min-h-[500px] px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          className="pt-10"
         >
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-white">
             Welcome to <br />
