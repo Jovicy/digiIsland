@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
 import "./index.css";
+import Solution from "./components/Solution";
 
 function App() {
   const location = useLocation();
@@ -16,7 +17,7 @@ function App() {
     const timeout = setTimeout(() => {
       setLoading(false);
       // Show Header slightly after loader disappears
-      setTimeout(() => setShowHeader(true), 100); 
+      setTimeout(() => setShowHeader(true), 100);
     }, 1500);
 
     return () => clearTimeout(timeout);
@@ -30,6 +31,8 @@ function App() {
       {loading && <Spinner />}
 
       {showHeader && <Header />}
+      
+      <Solution />
 
       {/* Bottom Gradient Bar */}
       <div className="w-full h-[6px] bottom-bar z-[100]" />
