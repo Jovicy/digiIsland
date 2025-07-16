@@ -1,7 +1,6 @@
 import React from "react";
 import Solution from "../components/Solution";
 import Serve from "../components/Serve";
-import Partners from "../components/Partners";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
@@ -9,7 +8,6 @@ const HomePage = () => {
     <>
       <Solution />
       <Serve />
-      <Partners />
       <Footer />
     </>
   );

@@ -35,9 +35,9 @@ const Header = () => {
         >
           <h1 className="text-[31.5px] md:text-5xl lg:text-7xl font-semibold lg:font-extrabold md:font-extrabold leading-tight text-white">
             Welcome to <br />
-            <span className="text-primary">DigitalIsland Solutions</span>
+            <span className="text-primary title-span">DigitalIsland Solutions</span>
             <br />
-            <span className="text-primary flex items-center gap-3 text-2xl md:text-2xl lg:text-7xl mt-2">
+            <span className="text-primary title-span flex items-center gap-3 text-2xl md:text-2xl lg:text-7xl mt-2">
               <FaArrowRightLong /> AI + SupTech + RegTech
             </span>
           </h1>

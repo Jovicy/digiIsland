@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Layout from "./layout/Layout";
+
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import NotFound from "./pages/NotFound";
+
 import "./index.css";
 
 function App() {
@@ -19,28 +23,40 @@ function App() {
 
     const timeout = setTimeout(() => {
       setLoading(false);
-      setTimeout(() => setShowHeader(true), 100);
+      if (location.pathname === "/") {
+        setShowHeader(true);
+      }
     }, 1500);
 
     return () => clearTimeout(timeout);
   }, [location]);
 
+  const isNotFound = location.pathname === "/404" || location.pathname === "/notfound";
+
   return (
     <>
       {/* Top Gradient Bar */}
-      <div className="w-full h-[6px] top-bar z-[100]" />
+      {!isNotFound && <div className="w-full h-[6px] top-bar z-[100]" />}
 
       {loading && <Spinner />}
       {showHeader && <Header />}
 
       <Routes>
+        {/* HomePage uses Header, no Layout */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+
+        {/* Internal Pages use Layout */}
+        <Route element={<Layout />}>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+
+        {/* NotFound: No Layout, No Header */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {/* Bottom Gradient Bar */}
-      <div className="w-full h-[6px] bottom-bar z-[100]" />
+      {!isNotFound && <div className="w-full h-[6px] bottom-bar z-[100]" />}
     </>
   );
 }

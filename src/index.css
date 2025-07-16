@@ -72,10 +72,6 @@ button {
   font-family: inherit;
 }
 
-input::placeholder {
-  color: var(--text-white);
-}
-
 img {
   width: 100%;
 }
