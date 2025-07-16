@@ -30,6 +30,18 @@ const getCardVariants = (isCenter) => ({
 const Solution = () => {
   const [showAll, setShowAll] = useState(false);
   const visibleItems = showAll ? cardData : cardData.slice(0, 6);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (card) => {
+    setSelectedCard(card);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedCard(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <section>
@@ -40,9 +52,9 @@ const Solution = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true, amount: 0.4 }} // triggers when 40% is in view
-          className="flex flex-col items-center text-center gap-3 mb-10 px-4 sm:px-6 lg:px-12"
+          className="flex flex-col items-center text-center gap-3 mb-10"
         >
-          <span className="title-span text-base sm:text-lg md:text-xl">
+          <span className="title-span text-base sm:text-lg md:text-xl font-medium">
             Smart Solutions & Expert Services
           </span>
 
@@ -74,7 +86,7 @@ const Solution = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }} // triggers when 30% is visible
                 variants={getCardVariants(isCenter)}
-                className="w-full max-w-sm mx-auto relative mb-20 px-6 pt-[60px] pb-[70px] border-2 border-white hover:border-glow backdrop-blur-[12.5px] transition-all duration-1000 shadow-[0_4px_49px_0_rgba(0,7,72,0.12)] bg-[linear-gradient(155deg,hsla(0,0%,100%,0)_-2.13%,hsla(0,0%,100%,.15)_136.58%)] cursor-pointer flex flex-col justify-between"
+                className="w-full max-w-sm mx-auto relative mb-20 px-6 pt-[60px] pb-[40px] border-2 border-white hover:border-glow backdrop-blur-[12.5px] transition-all duration-1000 shadow-[0_4px_49px_0_rgba(0,7,72,0.12)] bg-[linear-gradient(155deg,hsla(0,0%,100%,0)_-2.13%,hsla(0,0%,100%,.15)_136.58%)] cursor-pointer flex flex-col justify-between"
               >
                 <div className="absolute w-24 h-24 -top-[50px] left-6 bg-primary p-2 rounded-md">
                   <Icon className="w-full h-full" />
@@ -89,13 +101,42 @@ const Solution = () => {
                     {description}
                   </p>
                 </div>
-                <button className="w-full py-3 flex items-center justify-center text-white border-2 border-white backdrop-blur-[12.5px] transition-all duration-1000 cursor-pointer no-underline bg-transparent">
+                <button
+                  onClick={() =>
+                    openModal({ id, icon: Icon, title, description })
+                  }
+                  className="w-full py-3 flex items-center justify-center text-white border-2 border-white backdrop-blur-[12.5px] transition-all duration-1000 cursor-pointer no-underline bg-transparent"
+                >
                   Know More
                 </button>
               </motion.div>
             );
           })}
         </motion.div>
+        {isModalOpen && selectedCard && (
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center px-4">
+            <div className="bg-white rounded-xl shadow-lg w-full max-w-md p-6 relative text-black">
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 text-black text-lg font-bold"
+              >
+                ×
+              </button>
+
+              {/* Icon */}
+              <div className="w-16 h-16 bg-primary p-2 rounded-md mb-4">
+                <selectedCard.icon className="w-full h-full text-white" />
+              </div>
+
+              {/* Title & Description */}
+              <h2 className="text-xl font-bold mb-2">{selectedCard.title}</h2>
+              <p className="text-sm leading-6 text-gray-700">
+                {selectedCard.description}
+              </p>
+            </div>
+          </div>
+        )}
         <div className="flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}

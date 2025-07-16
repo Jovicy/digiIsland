@@ -14,6 +14,7 @@
   --glow: #00F0FF;
   --lightText: #F1F5F9;
   --borderDark: #1E293B;
+  --sub: #0F172A;
 }
 
 @theme inline {
@@ -27,6 +28,7 @@
   --color-head-family: var(--head-family);
   --color-body-family: var(--body-family);
   --color-body-color: var(--body-color);
+  --color-sub: var(--sub);
 }
 
 /* === Base Global Styles === */
@@ -57,7 +59,6 @@ h4,
 h5,
 h6 {
   font-family: var(--head-family);
-  color: var(--text-white);
 }
 
 li,
@@ -82,7 +83,6 @@ img {
 /* === Buttons === */
 button {
   border-radius: 8px;
-  color: var(--text-white);
   font-weight: 500;
   font-size: 16px;
   font-family: var(--head-family);
@@ -157,8 +157,6 @@ button {
 }
 
 .title-span {
-  font-weight: 500;
-  font-size: 22px;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(90deg, var(--primary), var(--glow), var(--secondary));
   -webkit-background-clip: text;
