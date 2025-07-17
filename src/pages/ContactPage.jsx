@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <section className="min-h-screen py-10 px-4">
+    <div className="py-20 px-4">
       <div className="container flex flex-col items-center">
         {/* Contact Title */}
         <div className="w-full flex items-center justify-center gap-4 mb-10">
@@ -66,7 +66,7 @@ const ContactPage = () => {
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 };
 

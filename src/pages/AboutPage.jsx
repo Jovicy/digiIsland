@@ -1,13 +1,184 @@
 import React from "react";
+import CountUp from "react-countup";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "../assets/about-page.avif";
+import integrateImg1 from "../assets/triangle.svg";
+import integrateImg2 from "../assets/geometric.svg";
+import integrateImg3 from "../assets/bermuda.svg";
+import visionImg from "../assets/vision-icon.svg";
+import missionImg from "../assets/mission-icon.svg";
 
 const AboutPage = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // Adjust based on when to start the animation
+  });
+
   return (
-    <section className="min-h-screen flex items-center justify-center p-10 text-center">
-      <div>
-        <h1 className="text-4xl font-bold mb-4">About Us</h1>
-        <p className="text-lg max-w-2xl">
-          Digital Island is a regulatory tech solution company committed to helping institutions meet their compliance goals.
-        </p>
+    <section className="min-h-screen">
+      <div className="container flex flex-col items-center">
+        {/* Title */}
+        <div className="w-full flex items-center justify-center gap-4 mb-10">
+          <div className="flex-grow border-t border-primary" />
+          <h1 className="title-span text-5xl md:text-7xl lg:text-9xl font-extrabold whitespace-nowrap">
+            Digital Islands
+          </h1>
+          <div className="flex-grow border-t border-primary" />
+        </div>
+        {/* About Content */}
+        <div className="flex flex-col gap-10" ref={ref}>
+          {/* Image Section */}
+          <div className="bg-sub p-6 md:p-10 lg:p-16 rounded-3xl">
+            <img src={Image} alt="team image" className="rounded-3xl w-full" />
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[#ffffff1a] w-full">
+            {/* Stat 1 */}
+            <div className="flex flex-col gap-8 border-b md:border-b-0 md:border-r border-[#ffffff1a] p-6">
+              <div className="w-20">
+                <img src={integrateImg1} alt="stat-img" className="w-full" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-glow">
+                  {inView ? <CountUp end={85} duration={5} suffix="%" /> : "0%"}
+                </h1>
+                <p className="text-base font-medium">
+                  Reduction in manual reporting
+                </p>
+                <h4 className="text-[#757575] text-sm pb-2">
+                  Through automated data collection
+                </h4>
+              </div>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="flex flex-col gap-8 border-b md:border-b-0 md:border-r border-[#ffffff1a] p-6">
+              <div className="w-20">
+                <img src={integrateImg2} alt="stat-img" className="w-full" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-glow">
+                  {inView ? <CountUp end={70} duration={5} suffix="%" /> : "0%"}
+                </h1>
+                <p className="text-base font-medium">
+                  Improved risk detection accuracy
+                </p>
+                <h4 className="text-[#757575] text-sm pb-2">
+                  Using AI-driven SUPTECH tools
+                </h4>
+              </div>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="flex flex-col gap-8 p-6">
+              <div className="w-20">
+                <img src={integrateImg3} alt="stat-img" className="w-full" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-glow">
+                  {inView ? <CountUp end={90} duration={5} suffix="%" /> : "0%"}
+                </h1>
+                <p className="text-base font-medium">
+                  Regulatory and supervisory process digitization
+                </p>
+                <h4 className="text-[#757575] text-sm pb-2">
+                  Across client institutions
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          {/* About Main section */}
+          <div className="flex flex-col lg:flex-row justify-between gap-12">
+            {/* About Text */}
+            <motion.div
+              className="lg:w-[40%] flex flex-col gap-4 sticky lg:top-[100px]"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-semibold">About Us</h3>
+
+              {[
+                "Digital Island Solutions Limited stands at the forefront of the evolving Suptech and Regtech sectors, establishing itself as a pioneering force dedicated to reshaping the very fabric of regulatory compliance and supervisory oversight.",
+                "We achieve this through the strategic and innovative application of cutting-edge technologies, most notably artificial intelligence (AI), blockchain, and the decentralized potential that Web3 solutions offer.",
+                "By harnessing the power of these transformative tools, Digital Island Solutions is uniquely positioned to competently address the evolving challenges and intricate demands of the modern financial ecosystem.",
+                "Our commitment lies in developing and deploying sophisticated platforms and services that not only streamline regulatory and supervisory processes, but also enhance the capabilities of those tasked with ensuring market integrity and stability.",
+                "We understand that the future of effective regulation and supervision largely depends on the intelligent integration of technology, in all its diverse forms. This is why Digital Island Solutions is driving the much-needed shift to achieve this critical revolution.",
+              ].map((text, index) => (
+                <motion.p
+                  key={index}
+                  className="text-sm md:text-base font-normal leading-relaxed text-[#ebebed] opacity-70"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  {text}
+                </motion.p>
+              ))}
+            </motion.div>
+
+            {/* Vision & Mission */}
+            <div className="lg:w-[55%] flex flex-col gap-20">
+              {/* Vision */}
+              <motion.div
+                className="flex flex-col gap-4"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="w-20">
+                  <img src={visionImg} alt="Our Vision" className="w-full" />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl md:text-3xl font-medium title-span">
+                    Our Vision
+                  </h2>
+                  <p className="text-base font-normal text-white">
+                    To be Africa's foremost provider of transformative
+                    regulatory and supervisory technologies that enable
+                    real-time, intelligent, and equitable governance of
+                    financial systems.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Mission */}
+              <motion.div
+                className="flex flex-col gap-4"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <div className="w-20">
+                  <img src={missionImg} alt="Our Mission" className="w-full" />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl md:text-3xl font-medium title-span">
+                    Our Mission
+                  </h2>
+                  <p className="text-base font-normal text-white">
+                    Our mission is deeply rooted in the desire to empower a
+                    diverse range of stakeholders — financial institutions
+                    navigating an increasingly complex regulatory landscape,
+                    regulatory bodies striving for more effective oversight, and
+                    governments seeking to foster economic stability and
+                    security. Digital Island Solutions equips these key players
+                    with tools and insights to navigate modern finance with
+                    unprecedented efficiency, transparency, and security.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+          
+        </div>
       </div>
     </section>
   );
