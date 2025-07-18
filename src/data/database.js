@@ -139,3 +139,48 @@ export const PartnerImg = [
     image: PartnerImg6,
   },
 ];
+
+export const testimonialsCont = [
+  {
+    id: 1,
+    userName: "Tunde Adewale",
+    userTitle: "Compliance Analyst, FinEdge",
+    userTestimony:
+      "Digital Island's real-time compliance tools are exactly what our team needed. The dashboards and automated reporting saved us hours during audit season.",
+  },
+  {
+    id: 2,
+    userName: "Fatima Yusuf",
+    userTitle: "Head of Risk, NovaReg",
+    userTestimony:
+      "With Digital Island, we've streamlined our entire risk assessment process. Their tools are precise, user-friendly, and have significantly reduced manual errors.",
+  },
+  {
+    id: 3,
+    userName: "Emeka Onwudiwe",
+    userTitle: "Policy Advisor, RegLogic",
+    userTestimony:
+      "The insights from Digital Island's analytics dashboard are invaluable. We’ve used them to refine policy strategies and stay proactive in a fast-changing landscape.",
+  },
+  {
+    id: 4,
+    userName: "Grace Omotola",
+    userTitle: "Operations Lead, TrustSphere",
+    userTestimony:
+      "Our compliance reporting turnaround has improved drastically since adopting Digital Island. It’s a must-have for modern regulatory environments.",
+  },
+  {
+    id: 5,
+    userName: "Ibrahim Hassan",
+    userTitle: "Senior Auditor, SafeBank",
+    userTestimony:
+      "Audit season used to be a nightmare. Now with Digital Island’s automation features, we complete audits in half the time and with fewer discrepancies.",
+  },
+  {
+    id: 6,
+    userName: "Lilian Eze",
+    userTitle: "Legal & Compliance Officer, FinHub Africa",
+    userTestimony:
+      "Digital Island bridges the gap between innovation and compliance. Their support for Web3 and AI integration is years ahead of the curve.",
+  },
+];

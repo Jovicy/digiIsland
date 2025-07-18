@@ -12,11 +12,15 @@ import noDp from "../assets/no-dp.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 // Your image data
-import { PartnerImg } from "../data/database";
+import { PartnerImg, testimonialsCont } from "../data/database";
 
 const AboutPage = () => {
   const [ref, inView] = useInView({
@@ -234,11 +238,11 @@ const AboutPage = () => {
         </div>
       </div>
       {/* Testimonial Section */}
-      <div className="py-10">
+      <article className="py-10">
         <div className="container flex flex-col">
-          <div className="flex items-center justify-between mb-10">
-            {/* Testimonial Title */}
-            <div className="">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
+            <div>
               <span className="title-span font-medium text-[20px] md:text-[22px]">
                 Testimonials
               </span>
@@ -247,43 +251,64 @@ const AboutPage = () => {
                 Island Is Transforming Regulation
               </h1>
             </div>
-            {/* Testimonial Arrow */}
+            {/* Custom Arrows */}
             <div className="flex items-center gap-2.5">
-              <div className="bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
+              <div className="swiper-prev bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
                 <FaArrowLeft />
               </div>
-              <div className="bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
+              <div className="swiper-next bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
                 <FaArrowRight />
               </div>
             </div>
           </div>
-          {/* testimonial Card */}
-          <div>
-            <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-white flex flex-col gap-5 flex-[0_0_32%] m-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
-              <div className="flex items-center gap-2">
-                <div className="w-14 flex">
-                  <img
-                    src={noDp}
-                    alt="Testimonial User Image"
-                    className="rounded-full border-2 border-glow object-cover"
-                  />
+
+          {/* Swiper Carousel */}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={{
+              nextEl: ".swiper-next",
+              prevEl: ".swiper-prev",
+            }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            spaceBetween={24}
+            loop={true}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="w-full"
+          >
+            {testimonialsCont.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-white flex flex-col gap-5 shadow-[0_4px_12px_rgba(0,0,0,0.1)] h-full">
+                  <div className="flex items-center gap-2">
+                    <div className="w-14 flex items-center justify-center">
+                      <img
+                        src={noDp}
+                        alt="Testimonial User"
+                        className="rounded-full border-2 border-glow object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold">
+                        {testimonial.userName}
+                      </h3>
+                      <p className="text-[0.85rem] text-[#ccc]">
+                        {testimonial.userTitle}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[0.95rem] leading-[1.6] text-[#ddd]">
+                    {testimonial.userTestimony}
+                  </p>
                 </div>
-                <div className="">
-                  <h3 className="text-base font-semibold">Tunde Adewale</h3>
-                  <p className="">Compliance Analyst, FinEdge</p>
-                </div>
-              </div>
-              <div className="">
-                <p>
-                  Digital Island's real-time compliance tools are exactly what
-                  our team needed. The dashboards and automated reporting saved
-                  us hours during audit season.
-                </p>
-              </div>
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </div>
+      </article>
     </section>
   );
 };
