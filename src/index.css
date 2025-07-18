@@ -160,4 +160,6 @@ button {
   font-family: var(--head-family);
 }
 
-
+.swiper-wrapper {
+  align-items: center !important;
+}

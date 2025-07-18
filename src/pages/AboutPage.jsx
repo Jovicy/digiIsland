@@ -8,6 +8,15 @@ import integrateImg2 from "../assets/geometric.svg";
 import integrateImg3 from "../assets/bermuda.svg";
 import visionImg from "../assets/vision-icon.svg";
 import missionImg from "../assets/mission-icon.svg";
+import noDp from "../assets/no-dp.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+
+// Your image data
+import { PartnerImg } from "../data/database";
 
 const AboutPage = () => {
   const [ref, inView] = useInView({
@@ -91,7 +100,7 @@ const AboutPage = () => {
           </div>
 
           {/* About Main section */}
-          <div className="flex flex-col lg:flex-row justify-between gap-12">
+          <div className="flex flex-col lg:flex-row justify-between gap-12 pb-20">
             {/* About Text */}
             <motion.div
               className="lg:w-[40%] flex flex-col gap-4 sticky lg:top-[100px]"
@@ -177,7 +186,102 @@ const AboutPage = () => {
               </motion.div>
             </div>
           </div>
-          
+        </div>
+      </div>
+      {/* Partners Section */}
+      <div className="bg-sub py-20">
+        <div className="container flex flex-col items-center gap-10">
+          {/* Partners Title */}
+          <div className="mb-4 text-center max-w-3xl">
+            <h1 className="title-span text-[32px] sm:text-[40px] md:text-[56px] font-medium">
+              Our Partners
+            </h1>
+            <p className="text-sm sm:text-base text-white opacity-80 mt-4">
+              We collaborate with leading regulatory bodies, financial
+              institutions, and technology providers to deliver comprehensive
+              SUPTECH and REGTECH solutions.
+            </p>
+          </div>
+
+          {/* Slider */}
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            loop={true}
+            breakpoints={{
+              320: { slidesPerView: 2, spaceBetween: 20 },
+              640: { slidesPerView: 3, spaceBetween: 30 },
+              768: { slidesPerView: 4, spaceBetween: 40 },
+              1024: { slidesPerView: 6, spaceBetween: 50 },
+            }}
+            className="w-full px-4 flex "
+          >
+            {PartnerImg.map((partner) => (
+              <SwiperSlide
+                key={partner.id}
+                className="flex justify-center items-center"
+              >
+                <div className="w-24 h-auto">
+                  <img
+                    src={partner.image}
+                    alt={`partner-${partner.id}`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+      {/* Testimonial Section */}
+      <div className="py-10">
+        <div className="container flex flex-col">
+          <div className="flex items-center justify-between mb-10">
+            {/* Testimonial Title */}
+            <div className="">
+              <span className="title-span font-medium text-[20px] md:text-[22px]">
+                Testimonials
+              </span>
+              <h1 className="text-[32px] sm:text-[40px] md:text-[56px] font-medium">
+                Real Stories of How <span className="title-span">Digital</span>{" "}
+                Island Is Transforming Regulation
+              </h1>
+            </div>
+            {/* Testimonial Arrow */}
+            <div className="flex items-center gap-2.5">
+              <div className="bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
+                <FaArrowLeft />
+              </div>
+              <div className="bg-[#ffffff1a] rounded-[10px] flex justify-center items-center w-12 h-12 text-white cursor-pointer">
+                <FaArrowRight />
+              </div>
+            </div>
+          </div>
+          {/* testimonial Card */}
+          <div>
+            <div className="bg-white/5 border border-white/15 rounded-2xl p-6 text-white flex flex-col gap-5 flex-[0_0_32%] m-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+              <div className="flex items-center gap-2">
+                <div className="w-14 flex">
+                  <img
+                    src={noDp}
+                    alt="Testimonial User Image"
+                    className="rounded-full border-2 border-glow object-cover"
+                  />
+                </div>
+                <div className="">
+                  <h3 className="text-base font-semibold">Tunde Adewale</h3>
+                  <p className="">Compliance Analyst, FinEdge</p>
+                </div>
+              </div>
+              <div className="">
+                <p>
+                  Digital Island's real-time compliance tools are exactly what
+                  our team needed. The dashboards and automated reporting saved
+                  us hours during audit season.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 // Card Data
+import { img } from "framer-motion/client";
 import {
   FaNetworkWired,
   FaLock,
@@ -13,6 +14,13 @@ import {
   FaUserShield,
   FaGraduationCap,
 } from "react-icons/fa6";
+
+import PartnerImg1 from "../assets/cbn.webp";
+import PartnerImg2 from "../assets/boi.png";
+import PartnerImg3 from "../assets/boa-logo.png";
+import PartnerImg4 from "../assets/ndic.png";
+import PartnerImg5 from "../assets/nfiu.gif";
+import PartnerImg6 from "../assets/nibbss.webp";
 
 export const cardData = [
   {
@@ -98,5 +106,36 @@ export const cardData = [
     title: "Capacity Building & Knowledge Transfer",
     description:
       "Training, workshops, and global collaboration to strengthen digital regulatory capabilities.",
+  },
+];
+
+export const PartnerImg = [
+  {
+    id: 1,
+    image: PartnerImg1,
+  },
+  {
+    id: 2,
+    image: PartnerImg2,
+  },
+  {
+    id: 3,
+    image: PartnerImg3,
+  },
+  {
+    id: 4,
+    image: PartnerImg4,
+  },
+  {
+    id: 5,
+    image: PartnerImg5,
+  },
+  {
+    id: 6,
+    image: PartnerImg6,
+  },
+  {
+    id: 6,
+    image: PartnerImg6,
   },
 ];
