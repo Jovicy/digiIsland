@@ -29,6 +29,15 @@ export const cardData = [
     title: "SUPTECH Platform",
     description:
       "Obtain real-time access to data analysis, automated reporting, and intelligent supervision tools for more effective oversight.",
+    details: `
+The SUPTECH Platform enables regulatory bodies to monitor and respond to financial activities in real-time. It provides:
+- Advanced dashboards for oversight
+- Automated compliance reporting
+- AI-powered risk detection
+- Seamless data integration from financial institutions
+
+With our intelligent supervision tools, regulators gain improved visibility, proactive risk management, and operational efficiency across sectors.
+    `,
   },
   {
     id: 2,
@@ -36,6 +45,15 @@ export const cardData = [
     title: "REGTECH Platform",
     description:
       "Streamline compliance, improve reporting accuracy and experience seamless integration with existing systems.",
+    details: `
+The REGTECH Platform simplifies regulatory compliance with:
+- Automated rule-based reporting
+- Real-time data validation
+- Seamless integration with existing infrastructure
+- Reduced human error and enhanced data accuracy
+
+It’s designed to help institutions meet regulatory obligations efficiently and confidently.
+    `,
   },
   {
     id: 3,
@@ -43,6 +61,15 @@ export const cardData = [
     title: "AI Analytics & Reporting",
     description:
       "Leverage AI to detect trends, highlight anomalies, and deliver actionable insights for regulatory decision-making.",
+    details: `
+Our AI Analytics & Reporting tools provide:
+- Predictive modeling to anticipate risks
+- Pattern detection across large data sets
+- Real-time anomaly alerts
+- Custom dashboards for visual insights
+
+These solutions transform raw data into actionable intelligence for policy and oversight decisions.
+    `,
   },
   {
     id: 4,
@@ -50,6 +77,15 @@ export const cardData = [
     title: "Risk Monitoring",
     description:
       "Continuously assess, manage financial and operational risks with predictive analytics and real-time tracking.",
+    details: `
+Risk Monitoring includes:
+- Dynamic risk scoring engines
+- Early warning systems
+- Integrated dashboards for real-time tracking
+- AI-driven risk prediction models
+
+This enables proactive supervision and timely intervention before issues escalate.
+    `,
   },
   {
     id: 5,
@@ -57,6 +93,15 @@ export const cardData = [
     title: "Compliance Dashboard",
     description:
       "Track compliance status, generate reports automatically and visualize key regulatory metrics with a centralized interface.",
+    details: `
+Our Compliance Dashboard offers:
+- A centralized control panel for all compliance metrics
+- Auto-generated reporting to reduce manual workload
+- Integration with multiple data sources
+- Easy-to-understand visualization of regulatory KPIs
+
+It empowers teams to manage and improve compliance processes with clarity and speed.
+    `,
   },
   {
     id: 6,
@@ -64,6 +109,15 @@ export const cardData = [
     title: "Regulatory Innovation & Advisory",
     description:
       "Strategic guidance for digitizing regulation, modernizing frameworks, and engaging stakeholders in co-creation.",
+    details: `
+This service offers:
+- Framework modernization consulting
+- Stakeholder engagement strategy
+- Policy digitization and prototyping
+- Cross-sector advisory for tech-enabled regulation
+
+It fosters an innovation-driven regulatory environment with inclusive collaboration.
+    `,
   },
   {
     id: 7,
@@ -71,6 +125,15 @@ export const cardData = [
     title: "Custom Development & Transformation",
     description:
       "Custom RegTech platforms, API integration, and agile cloud-native solutions for regulatory innovation.",
+    details: `
+We deliver tailored solutions including:
+- Bespoke RegTech platform development
+- API gateways for regulatory data sharing
+- Agile deployments on cloud-native architecture
+- UX-optimized interfaces for internal and public users
+
+Perfect for regulators or institutions seeking to lead in digital transformation.
+    `,
   },
   {
     id: 8,
@@ -78,6 +141,15 @@ export const cardData = [
     title: "AI-Powered Compliance Intelligence",
     description:
       "AI tools for anomaly detection, predictive risk analysis, and automated regulatory interpretation.",
+    details: `
+Our AI-powered tools include:
+- Natural Language Processing for regulatory text interpretation
+- Predictive analytics for emerging risk signals
+- Autonomous compliance checks
+- Pattern and anomaly detection at scale
+
+This leads to smarter, faster, and more scalable compliance operations.
+    `,
   },
   {
     id: 9,
@@ -85,6 +157,15 @@ export const cardData = [
     title: "Web3 & Blockchain Innovation",
     description:
       "Blockchain-based compliance, smart contracts, and verifiable credentials for transparency and automation.",
+    details: `
+This solution leverages:
+- Smart contracts for automated regulatory enforcement
+- Blockchain for audit-proof recordkeeping
+- Decentralized identity and verifiable credentials
+- Secure data provenance and tracking
+
+Ideal for regulators exploring trust, transparency, and decentralization in compliance.
+    `,
   },
   {
     id: 10,
@@ -92,6 +173,15 @@ export const cardData = [
     title: "Regulatory Technology (RegTech) Services",
     description:
       "Automated reporting, e-KYC, AML, and real-time policy compliance for multi-jurisdictional needs.",
+    details: `
+Our RegTech services cover:
+- e-KYC and customer verification systems
+- AML screening and transaction monitoring
+- Cross-border regulatory compliance solutions
+- Policy change management automation
+
+These tools reduce risk exposure and regulatory burdens for financial entities.
+    `,
   },
   {
     id: 11,
@@ -99,6 +189,15 @@ export const cardData = [
     title: "Supervisory Technology (SupTech) Services",
     description:
       "Data analytics, risk dashboards, and workflow automation for smarter, proactive regulatory supervision.",
+    details: `
+SupTech Services include:
+- AI-enhanced regulatory dashboards
+- Workflow automation for case tracking
+- Risk classification and prioritization systems
+- Secure data exchange mechanisms
+
+This enables supervisory bodies to operate with greater agility and insight.
+    `,
   },
   {
     id: 12,
@@ -106,6 +205,15 @@ export const cardData = [
     title: "Capacity Building & Knowledge Transfer",
     description:
       "Training, workshops, and global collaboration to strengthen digital regulatory capabilities.",
+    details: `
+We offer:
+- Hands-on training in RegTech and SupTech tools
+- Global best practice sharing through workshops
+- Capacity building programs for regulators
+- Knowledge hubs and resource libraries
+
+Helping institutions build and retain expertise for long-term digital success.
+    `,
   },
 ];
 

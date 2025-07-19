@@ -7,6 +7,8 @@ import TriangleImg from "../assets/triangle.svg";
 import PassionImg from "../assets/passion-icon.svg";
 import CollabImg from "../assets/collab-img.svg";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -18,6 +20,18 @@ const fadeInUp = {
 };
 
 const HomePage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      const section = document.getElementById(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <section className="py-16 px-4 md:px-8 lg:px-0">
@@ -94,8 +108,12 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <Serve />
-      <Solution />
+      <div id="services">
+        <Serve />
+      </div>
+      <div id="solution">
+        <Solution />
+      </div>
       <Footer />
     </>
   );

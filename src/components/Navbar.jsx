@@ -38,9 +38,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/services" className={navLinkClass("/services")}>
+            <a href="#/#services" className="text-white hover:text-secondary">
               Services
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -54,9 +54,9 @@ const Navbar = () => {
         {/* Right Links */}
         <ul className="hidden md:flex gap-x-14 items-center">
           <li>
-            <Link to="/solution" className={navLinkClass("/solution")}>
-              Solutions
-            </Link>
+            <a href="#/#solution" className="text-white hover:text-secondary">
+              Solution
+            </a>
           </li>
           <li>
             <Link to="/contact" className={navLinkClass("/contact")}>
@@ -64,9 +64,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <button className="py-2 px-6 bg-primary text-white rounded-full hover:bg-glow transition">
+            <Link to="/contact" className="py-2 px-6 bg-primary text-white rounded-md hover:bg-glow transition">
               Join Us
-            </button>
+            </Link>
           </li>
         </ul>
 
@@ -108,14 +108,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/services"
-                className={navLinkClass("/services")}
-                onClick={() => setIsOpen(false)}
-              >
+              <a href="/#services" className={navLinkClass("/#services")}>
                 Services
-              </Link>
+              </a>
             </li>
+
             <li>
               <Link
                 to="/solution"

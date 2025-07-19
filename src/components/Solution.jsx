@@ -76,7 +76,7 @@ const Solution = () => {
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-[100px]"
         >
           {/* Cards */}
-          {visibleItems.map(({ id, icon: Icon, title, description }, index) => {
+          {visibleItems.map(({ id, icon: Icon, title, description, details }, index) => {
             const isCenter = index % 3 === 1;
 
             return (
@@ -103,7 +103,7 @@ const Solution = () => {
                 </div>
                 <button
                   onClick={() =>
-                    openModal({ id, icon: Icon, title, description })
+                    openModal({ id, icon: Icon, title, description, details })
                   }
                   className="w-full py-3 flex items-center justify-center text-white border-2 border-white backdrop-blur-[12.5px] transition-all duration-1000 cursor-pointer no-underline bg-transparent"
                 >
@@ -131,9 +131,9 @@ const Solution = () => {
 
               {/* Title & Description */}
               <h2 className="text-xl font-bold mb-2">{selectedCard.title}</h2>
-              <p className="text-sm leading-6 text-gray-700">
-                {selectedCard.description}
-              </p>
+              <div className="text-sm leading-6 text-gray-700 whitespace-pre-line">
+                {selectedCard.details}
+              </div>
             </div>
           </div>
         )}

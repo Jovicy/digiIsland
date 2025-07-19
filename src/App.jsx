@@ -23,7 +23,7 @@ function App() {
 
     const timeout = setTimeout(() => {
       setLoading(false);
-      if (location.pathname === "/") {
+      if (location.pathname === "/" || location.pathname === "") {
         setShowHeader(true);
       }
     }, 1500);
@@ -31,7 +31,10 @@ function App() {
     return () => clearTimeout(timeout);
   }, [location]);
 
-  const isNotFound = location.pathname === "/404" || location.pathname === "/notfound";
+  const isNotFound =
+    location.pathname === "/404" ||
+    location.pathname === "/notfound" ||
+    location.hash === "#404"; // 👈 include hash support
 
   return (
     <>

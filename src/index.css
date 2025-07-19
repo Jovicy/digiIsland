@@ -46,6 +46,11 @@ body {
   margin: 0 auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* === Section === */
 section {
   padding: 5rem 0rem;
@@ -123,8 +128,10 @@ button {
   left: 0;
   width: 180px;
   height: 180px;
-  border: 10px solid var(--glow); /* active glow */
-  border-top: 5px solid var(--glow); /* smooth spin */
+  border: 10px solid var(--glow);
+  /* active glow */
+  border-top: 5px solid var(--glow);
+  /* smooth spin */
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
   z-index: 1;
@@ -140,16 +147,17 @@ button {
   }
 }
 
-.top-bar, .bottom-bar {
+.top-bar,
+.bottom-bar {
   height: 6px;
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--glow),
-    #FFD700 /* Gold accent */,
-    var(--glow),
-    var(--primary)
-  );
+  background: linear-gradient(90deg,
+      var(--primary),
+      var(--glow),
+      #FFD700
+      /* Gold accent */
+      ,
+      var(--glow),
+      var(--primary));
 }
 
 .title-span {
