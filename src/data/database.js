@@ -21,6 +21,7 @@ import PartnerImg3 from "../assets/boa-logo.png";
 import PartnerImg4 from "../assets/ndic.png";
 import PartnerImg5 from "../assets/nfiu.gif";
 import PartnerImg6 from "../assets/nibbss.webp";
+import PartnerImg7 from "../assets/firs.png";
 
 export const cardData = [
   {
@@ -243,8 +244,8 @@ export const PartnerImg = [
     image: PartnerImg6,
   },
   {
-    id: 6,
-    image: PartnerImg6,
+    id: 7,
+    image: PartnerImg7,
   },
 ];
 

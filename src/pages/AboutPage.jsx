@@ -25,7 +25,7 @@ import { PartnerImg, testimonialsCont } from "../data/database";
 const AboutPage = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.3, // Adjust based on when to start the animation
+    threshold: 0.1, // Adjust based on when to start the animation
   });
 
   return (
@@ -47,7 +47,10 @@ const AboutPage = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[#ffffff1a] w-full">
+          <div
+            ref={ref}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[#ffffff1a] w-full"
+          >
             {/* Stat 1 */}
             <div className="flex flex-col gap-8 border-b md:border-b-0 md:border-r border-[#ffffff1a] p-6">
               <div className="w-20">
