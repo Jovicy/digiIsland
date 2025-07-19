@@ -8,6 +8,7 @@ import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import CareerPage from "./pages/CareerPage";
 import NotFound from "./pages/NotFound";
 
 import "./index.css";
@@ -52,6 +53,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/career" element={<CareerPage />} />
         </Route>
 
         {/* NotFound: No Layout, No Header */}

@@ -64,7 +64,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="py-2 px-6 bg-primary text-white rounded-md hover:bg-glow transition">
+            <Link
+              to="/contact"
+              className="py-2 px-6 bg-primary text-white rounded-md hover:bg-glow transition"
+            >
               Join Us
             </Link>
           </li>
@@ -108,19 +111,22 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <a href="/#services" className={navLinkClass("/#services")}>
+              <a
+                href="#/#services"
+                className="text-white hover:text-secondary"
+                onClick={() => setIsOpen(false)}
+              >
                 Services
               </a>
             </li>
-
             <li>
-              <Link
-                to="/solution"
-                className={navLinkClass("/solution")}
+              <a
+                href="#/#solution"
+                className="text-white hover:text-secondary"
                 onClick={() => setIsOpen(false)}
               >
-                Solutions
-              </Link>
+                Solution
+              </a>
             </li>
             <li>
               <Link
@@ -132,9 +138,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <button className="py-2 px-6 bg-primary text-white rounded-full hover:bg-glow transition w-full text-left">
+              <Link
+                to="/contact"
+                className="py-2 px-6 bg-primary text-white rounded-md hover:bg-glow transition"
+              >
                 Join Us
-              </button>
+              </Link>
             </li>
           </motion.ul>
         )}
