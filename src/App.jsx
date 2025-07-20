@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
+import ScrollToTop from "./components/ScrollToTop";
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
 import Layout from "./layout/Layout";
@@ -38,21 +39,19 @@ function App() {
   const isNotFound =
     location.pathname === "/404" ||
     location.pathname === "/notfound" ||
-    location.hash === "#404"; // 👈 include hash support
+    location.hash === "#404";
 
   return (
     <>
-      {/* Top Gradient Bar */}
+      <ScrollToTop /> {/* ✅ Add this line */}
+
       {!isNotFound && <div className="w-full h-[6px] top-bar z-[100]" />}
 
       {loading && <Spinner />}
       {showHeader && <Header />}
 
       <Routes>
-        {/* HomePage uses Header, no Layout */}
         <Route path="/" element={<HomePage />} />
-
-        {/* Internal Pages use Layout */}
         <Route element={<Layout />}>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -61,15 +60,13 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/faq" element={<FaqPages />} />
         </Route>
-
-        {/* NotFound: No Layout, No Header */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Bottom Gradient Bar */}
       {!isNotFound && <div className="w-full h-[6px] bottom-bar z-[100]" />}
     </>
   );
 }
+
 
 export default App;

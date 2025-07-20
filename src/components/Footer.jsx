@@ -25,7 +25,15 @@ const Footer = () => {
               <h3 className="mb-3 font-bold text-base">Quick Links</h3>
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
-              <Link to="/services">Services</Link>
+              <li>
+                <a
+                  href="#/#services"
+                  className="text-white hover:text-secondary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Services
+                </a>
+              </li>
               <Link to="/contact">Contact</Link>
             </ul>
 
