@@ -9,6 +9,9 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import CareerPage from "./pages/CareerPage";
+import LicencePage from "./pages/LicencePage";
+import TermsPage from "./pages/TermsPage";
+import FaqPages from "./pages/FaqPages";
 import NotFound from "./pages/NotFound";
 
 import "./index.css";
@@ -54,6 +57,9 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/career" element={<CareerPage />} />
+          <Route path="/license" element={<LicencePage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/faq" element={<FaqPages />} />
         </Route>
 
         {/* NotFound: No Layout, No Header */}

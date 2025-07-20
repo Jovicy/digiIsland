@@ -13,6 +13,8 @@ import {
   FaShield,
   FaUserShield,
   FaGraduationCap,
+  FaGlobe,
+  FaUsers,
 } from "react-icons/fa6";
 
 import PartnerImg1 from "../assets/cbn.webp";
@@ -291,5 +293,173 @@ export const testimonialsCont = [
     userTitle: "Legal & Compliance Officer, FinHub Africa",
     userTestimony:
       "Digital Island bridges the gap between innovation and compliance. Their support for Web3 and AI integration is years ahead of the curve.",
+  },
+];
+
+export const stats = [
+  {
+    label: "Client Satisfaction",
+    value: 96,
+    suffix: "%",
+  },
+  {
+    label: "Institutions Served",
+    value: 130,
+    suffix: "+",
+  },
+  {
+    label: "Processes Automated",
+    value: 1.1,
+    suffix: "M",
+    decimals: 1,
+  },
+];
+
+export const featureData = [
+  {
+    icon: FaGlobe,
+    title: "Remote & Hybrid Flexibility",
+    description:
+      "We believe regulatory innovation can happen anywhere. Work how you work best—remotely, in-office, or both.",
+  },
+  {
+    icon: FaUserShield,
+    title: "Healthy Work–Life Balance",
+    description:
+      "We prioritize meaningful impact without burnout. Focus, flexibility, and mental wellness are part of our culture.",
+  },
+  {
+    icon: FaUsers,
+    title: "Purpose-Driven Innovation",
+    description:
+      "Our team builds tech that makes regulatory ecosystems safer, faster, and more intelligent.",
+  },
+];
+
+export const careerData = [
+  {
+    category: "Engineering",
+    title: "Senior Software Engineer",
+    description:
+      "Lead development of scalable SupTech and RegTech platforms using modern web technologies.",
+    type: "Full Time",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+  {
+    category: "Data & AI",
+    title: "Regulatory Data Scientist",
+    description:
+      "Design and train AI models for anomaly detection, fraud risk scoring, and data classification.",
+    type: "Full Time",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+  {
+    category: "Design",
+    title: "Product Designer (UI/UX)",
+    description:
+      "Craft intuitive dashboards and user flows for complex regulatory processes and analytics.",
+    type: "Remote",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+  {
+    category: "Compliance & Strategy",
+    title: "Regulatory Technology Advisor",
+    description:
+      "Bridge policy and tech by shaping features aligned with evolving regulatory standards.",
+    type: "Full Time",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+  {
+    category: "Engineering",
+    title: "DevOps Engineer",
+    description:
+      "Ensure reliable deployments and scalable infrastructure across our regulatory cloud platforms.",
+    type: "Hybrid",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+  {
+    category: "Content & Policy",
+    title: "Technical Content Writer",
+    description:
+      "Write clear documentation, blogs, and product copy for AI, compliance, and regulatory topics.",
+    type: "Part Time",
+    salary: "Based on Experience",
+    applyLink: "#/contact",
+  },
+];
+
+export const faqData = [
+  {
+    title: "General Questions",
+    items: [
+      {
+        number: 1,
+        question: "What is SUPTECH and how does it support regulators?",
+        answer:
+          "SUPTECH (Supervisory Technology) uses AI and analytics to automate supervision and gain real-time insights from financial data.",
+      },
+      {
+        number: 2,
+        question: "How does your REGTECH solution help financial institutions?",
+        answer:
+          "It automates compliance reporting, monitors risks, and helps institutions adapt to regulatory changes efficiently.",
+      },
+    ],
+  },
+  {
+    title: "Expert Insights",
+    items: [
+      {
+        number: 3,
+        question: "What makes your platform different from others?",
+        answer:
+          "Our tools are built by regulatory experts with AI-first architecture and multi-jurisdictional support.",
+      },
+      {
+        number: 4,
+        question: "Do you support sandbox environments?",
+        answer:
+          "Yes. We offer regulatory sandbox integration for secure testing of innovations under regulator supervision.",
+      },
+    ],
+  },
+  {
+    title: "Platform & Security",
+    items: [
+      {
+        number: 5,
+        question: "Is your platform secure and scalable?",
+        answer:
+          "Yes, we use secure cloud-native infrastructure with high availability and data encryption at all levels.",
+      },
+      {
+        number: 6,
+        question: "Where is your data hosted?",
+        answer:
+          "Our platform supports local and global hosting options, compliant with regional data laws.",
+      },
+    ],
+  },
+  {
+    title: "Integration & Support",
+    items: [
+      {
+        number: 7,
+        question: "Can your tools integrate with our existing systems?",
+        answer:
+          "Absolutely. Our platform is fully API-enabled and designed for seamless integration with existing infrastructure.",
+      },
+      {
+        number: 8,
+        question: "Do you offer technical support or onboarding?",
+        answer:
+          "Yes, we provide onboarding assistance, technical documentation, and ongoing client support services.",
+      },
+    ],
   },
 ];
