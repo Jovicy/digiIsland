@@ -230,7 +230,7 @@ const CareerPage = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
           >
-            <div className="text-center text-white flex flex-col gap-4 px-4">
+            <div className="text-center text-white flex flex-col gap-4">
               <h1 className="text-center text-white font-normal leading-[120%] text-[36px] md:text-[48px] lg:text-[56px] tracking-[-0.1875rem] m-0 font-head">
                 Careers at Digital Island
               </h1>
@@ -240,7 +240,7 @@ const CareerPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[24px] px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[24px]">
               {careerData.map((job, index) => (
                 <motion.div
                   key={index}
