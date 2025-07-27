@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import Logo1 from "../assets/lege.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -45,10 +46,13 @@ const Navbar = () => {
         </ul>
 
         {/* Logo Center */}
-        <div className="p-[4px] rounded-full bg-[linear-gradient(90deg,_#00C9FF,_#00F0FF,_#FFD700,_#00F0FF,_#00C9FF)] w-fit">
-          <div className="w-20 p-5 bg-body-color rounded-full flex items-center justify-center md:w-32">
-            <img src={Logo} alt="Logo" />
-          </div>
+        <div className="w-40 md:w-48 p-2 flex items-center justify-center">
+          <img
+            src={Logo1}
+            alt="Logo"
+            className="w-full h-auto object-contain 
+      contrast-[1.3] brightness-[1.15] drop-shadow-[0_0_4px_rgba(0,0,0,0.3)]"
+          />
         </div>
 
         {/* Right Links */}

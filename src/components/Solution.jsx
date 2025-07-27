@@ -28,8 +28,6 @@ const getCardVariants = (isCenter) => ({
 });
 
 const Solution = () => {
-  const [showAll, setShowAll] = useState(false);
-  const visibleItems = showAll ? cardData : cardData.slice(0, 6);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -76,7 +74,7 @@ const Solution = () => {
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-[100px]"
         >
           {/* Cards */}
-          {visibleItems.map(({ id, icon: Icon, title, description, details }, index) => {
+          {cardData.map(({ id, icon: Icon, title, description, details }, index) => {
             const isCenter = index % 3 === 1;
 
             return (
@@ -137,14 +135,6 @@ const Solution = () => {
             </div>
           </div>
         )}
-        <div className="flex justify-center">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="text-primary font-medium border border-primary px-6 py-2 rounded hover:bg-primary hover:text-white transition-all duration-300"
-          >
-            {showAll ? "See Less" : "See More"}
-          </button>
-        </div>
       </div>
     </section>
   );
