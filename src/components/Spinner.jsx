@@ -1,7 +1,6 @@
 // src/components/Spinner.jsx
 import React from "react";
-import Logo from "../assets/logo.png"; // adjust path if needed
-import Logo1 from "../assets/logo-1.png";
+import Logo1 from "../assets/logo-1.svg";
 
 const Spinner = () => {
   return (

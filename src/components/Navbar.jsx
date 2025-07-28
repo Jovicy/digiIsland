@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import Logo1 from "../assets/lege.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -46,13 +45,22 @@ const Navbar = () => {
         </ul>
 
         {/* Logo Center */}
-        <div className="w-40 md:w-48 p-2 flex items-center justify-center">
-          <img
-            src={Logo1}
-            alt="Logo"
-            className="w-full h-auto object-contain 
-      contrast-[1.3] brightness-[1.15] drop-shadow-[0_0_4px_rgba(0,0,0,0.3)]"
-          />
+        <div className="flex items-center gap-0 flex-wrap sm:flex-nowrap justify-center sm:justify-start">
+          <div className="w-16 sm:w-20">
+            <img
+              src={Logo}
+              alt="logo"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <h3 className="text-[#053a54] text-xl sm:text-2xl md:text-3xl font-extrabold leading-snug">
+              Digital Island
+            </h3>
+            <p className="text-[#9a9ea3] text-sm sm:text-base font-semibold">
+              Solutions Limited
+            </p>
+          </div>
         </div>
 
         {/* Right Links */}
